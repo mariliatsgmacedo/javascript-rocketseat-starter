@@ -13,7 +13,6 @@ function addBox() {
     boxDiv.style.display = 'inline-block'
     //Add Body
     document.body.appendChild(boxDiv)
-
 }
 
 function changeColorBack(boxDiv) {
@@ -34,5 +33,24 @@ function getRandomColor() {
 var newColor = getRandomColor()
 
 botao.addEventListener('click', addBox)
+
+
+var nomes = ['Diego', 'Gabriel', 'Lucas']
+
+var listUl = document.createElement('ul')
+
+for (var i = 0; i < nomes.length; i++) {
+
+    var listLi = document.createElement('li')
+    listUl.appendChild(listLi)
+
+    var items = document.createTextNode(nomes[i])
+    listLi.appendChild(items)
+    
+}
+
+document.body.appendChild(listUl)
+
+
 
 
