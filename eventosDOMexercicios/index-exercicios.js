@@ -37,20 +37,31 @@ botao.addEventListener('click', addBox)
 
 var nomes = ['Diego', 'Gabriel', 'Lucas']
 
+//Create Element UL
 var listUl = document.createElement('ul')
 
 for (var i = 0; i < nomes.length; i++) {
-
-    var listLi = document.createElement('li')
-    listUl.appendChild(listLi)
-
-    var items = document.createTextNode(nomes[i])
-    listLi.appendChild(items)
-    
+    addItemToList(listUl, nomes[i])
 }
 
 document.body.appendChild(listUl)
 
+function addItemToList(ui, text){
+    var li = document.createElement('li')
+    ui.appendChild(li)
+    var items = document.createTextNode(text)
+    li.appendChild(items)
+}
+
+
+function adicionar() {
+    let inputName = document.querySelector('input[name=nome]')
+    let text = inputName.value
+    nomes.push(text)
+    let list = document.querySelector('ul')
+    addItemToList(list, text)
+    inputName.value = ""
+}
 
 
 
